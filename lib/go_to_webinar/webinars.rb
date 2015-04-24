@@ -1,8 +1,8 @@
 module GoToWebinar
   module Webinars
 
-    def create_webinar(params = {})
-      self.class.post("webinars", :query => params)
+    def create_webinar(params)
+      self.class.post("webinars", :body => params.to_json)
     end
 
     def get_historical_webinars(params = {})
